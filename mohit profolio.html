@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mohit Patel | Portfolio</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Animations -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+  <style>
+    /* Background */
+    body {
+      background: linear-gradient(135deg, #0a0f34, #222a68, #2d0b4e);
+      color: #fff;
+      scroll-behavior: smooth;
+      font-family: "Poppins", sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* Floating Bubbles Background */
+    .bubbles span {
+      position: absolute;
+      bottom: -50px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 50%;
+      animation: bubble 12s linear infinite;
+    }
+
+    @keyframes bubble {
+      0% { transform: translateY(0) scale(1); opacity: 1; }
+      100% { transform: translateY(-100vh) scale(1.5); opacity: 0; }
+    }
+
+    /* Navbar */
+    .navbar {
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .navbar-brand span {
+      color: #4da6ff;
+    }
+
+    /* Hero */
+    #home {
+      padding: 140px 0;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+
+    .hero-title {
+      font-size: 3rem;
+      font-weight: 700;
+    }
+
+    #typewriter {
+      color: #4da6ff;
+      font-weight: bold;
+    }
+
+    .hero-img {
+      width: 320px;
+      border-radius: 50%;
+      border: 6px solid #4da6ff;
+      box-shadow: 0 0 35px #4da6ff;
+      animation: glow 3s infinite alternate;
+    }
+
+    @keyframes glow {
+      0% { box-shadow: 0 0 15px #4da6ff; }
+      100% { box-shadow: 0 0 35px #4da6ff; }
+    }
+
+    /* Buttons */
+    .btn-custom {
+      background: #4da6ff;
+      color: #fff;
+      font-weight: bold;
+      border-radius: 30px;
+      padding: 12px 25px;
+      transition: 0.3s;
+    }
+
+    .btn-custom:hover {
+      background: #1f8fff;
+      box-shadow: 0 0 20px #4da6ff;
+    }
+
+    /* Sections */
+    .section-title {
+      font-size: 2.6rem;
+      margin-bottom: 30px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    /* Skills */
+    .skill-card {
+      padding: 25px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 15px;
+      text-align: center;
+      border: 1px solid rgba(255,255,255,0.2);
+      transition: 0.4s;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 25px #4da6ff;
+    }
+
+    .progress-anim {
+      width: 0;
+      transition: width 2s ease;
+    }
+
+    /* Projects */
+    .project-card {
+      background: rgba(255,255,255,0.1);
+      border-radius: 15px;
+      padding: 20px;
+      transition: 0.4s;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 0 25px #4da6ff;
+    }
+
+    /* Contact */
+    .contact-form input,
+    .contact-form textarea {
+      background: rgba(255,255,255,0.1);
+      border: none;
+      color: #fff;
+      padding: 12px;
+    }
+
+    footer {
+      margin-top: 40px;
+      background: rgba(255,255,255,0.1);
+      padding: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ✅ Floating Bubbles -->
+<div class="bubbles">
+  <span style="left: 5%; width: 20px; height: 20px;"></span>
+  <span style="left: 15%; width: 30px; height: 30px;"></span>
+  <span style="left: 30%; width: 15px; height: 15px;"></span>
+  <span style="left: 50%; width: 25px; height: 25px;"></span>
+  <span style="left: 70%; width: 20px; height: 20px;"></span>
+  <span style="left: 85%; width: 35px; height: 35px;"></span>
+</div>
+
+<!-- ✅ NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <a class="navbar-brand text-white fw-bold" href="#">Port<span>folio</span></a>
+
+    <button class="navbar-toggler bg-white" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a href="#home" class="nav-link text-white">Home</a></li>
+        <li class="nav-item"><a href="#about" class="nav-link text-white">About</a></li>
+        <li class="nav-item"><a href="#skills" class="nav-link text-white">Skills</a></li>
+        <li class="nav-item"><a href="#projects" class="nav-link text-white">Projects</a></li>
+        <li class="nav-item"><a href="#contact" class="nav-link text-white">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ✅ HOME -->
+<section id="home">
+  <div class="container">
+    <div class="row align-items-center">
+
+      <div class="col-md-6" data-aos="fade-right">
+        <h3>Hello, It's Me</h3>
+        <h1 class="hero-title">Mohit Patel</h1>
+        <h3>And I'm a <span id="typewriter"></span></h3>
+        <p class="mt-3">
+          Full Stack Developer skilled in HTML, CSS, JS, React, Java, Python, MySQL.
+        </p>
+
+        <a href="Mohit_Kiran_Patel_Resume_Advanced.pdf" class="btn btn-custom mt-3" download>Download Resume</a>
+      </div>
+
+      <div class="col-md-6 text-center" data-aos="fade-left">
+        <img src="image/mohit.jpg" class="hero-img" alt="Mohit Patel">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ✅ ABOUT -->
+<section id="about" class="mt-5">
+  <div class="container" data-aos="zoom-in">
+    <h2 class="section-title">About Me</h2>
+    <p class="text-center">
+      B.Tech CSE student at Uka Tarsadia University with strong interest in MERN stack,
+      Java, Python, and real world software development.
+    </p>
+  </div>
+</section>
+
+<!-- ✅ SKILLS -->
+<section id="skills" class="mt-5">
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-up">Skills</h2>
+
+    <div class="row g-4">
+
+      <div class="col-md-3">
+        <div class="skill-card" data-aos="flip-left">
+          <i class="fab fa-html5 fa-3x text-warning"></i>
+          <h5 class="mt-3">HTML</h5>
+          <div class="progress mt-3">
+            <div class="progress-bar bg-info progress-anim" data-value="95%"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="skill-card" data-aos="flip-left">
+          <i class="fab fa-css3-alt fa-3x text-info"></i>
+          <h5 class="mt-3">CSS</h5>
+          <div class="progress mt-3">
+            <div class="progress-bar bg-info progress-anim" data-value="90%"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="skill-card" data-aos="flip-left">
+          <i class="fab fa-js fa-3x text-warning"></i>
+          <h5 class="mt-3">JavaScript</h5>
+          <div class="progress mt-3">
+            <div class="progress-bar bg-info progress-anim" data-value="85%"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="skill-card" data-aos="flip-left">
+          <i class="fab fa-react fa-3x text-info"></i>
+          <h5 class="mt-3">React.js</h5>
+          <div class="progress mt-3">
+            <div class="progress-bar bg-info progress-anim" data-value="80%"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ✅ PROJECTS -->
+<section id="projects" class="mt-5">
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-up">Projects</h2>
+
+    <div class="row g-4">
+
+      <div class="col-md-6" data-aos="zoom-in">
+        <div class="project-card">
+          <h4>Appointment Booking System</h4>
+          <p>Dental clinic booking system using HTML, CSS, JavaScript.</p>
+          <a href="https://github.com/Mohit0406/project1" class="btn btn-custom mt-2">GitHub</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ✅ CONTACT -->
+<section id="contact">
+  <div class="container mt-5">
+    <h2 class="section-title" data-aos="fade-up">Contact Me</h2>
+
+    <form class="contact-form mx-auto mt-4" style="max-width:600px;" data-aos="fade-up">
+      <input type="text" class="form-control mb-3" placeholder="Your Name">
+      <input type="email" class="form-control mb-3" placeholder="Your Email">
+      <textarea class="form-control mb-3" rows="5" placeholder="Your Message"></textarea>
+      <button class="btn btn-custom w-100">Send</button>
+    </form>
+  </div>
+</section>
+
+<!-- ✅ FOOTER -->
+<footer>
+  <p>© 2025 Mohit Patel | All Rights Reserved</p>
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+  AOS.init();
+
+  // Typing Animation
+  const text = ["Full Stack Developer", "Java Programmer", "Python Developer", "Web Designer"];
+  let index = 0;
+  let charIndex = 0;
+
+  function typeEffect() {
+    const typingElement = document.getElementById("typewriter");
+    typingElement.innerHTML = text[index].slice(0, charIndex);
+
+    charIndex++;
+    if (charIndex > text[index].length) {
+      setTimeout(() => {
+        charIndex = 0;
+        index = (index + 1) % text.length;
+      }, 1500);
+    }
+    setTimeout(typeEffect, 120);
+  }
+  typeEffect();
+
+  // Animated Skill Bars
+  document.addEventListener("DOMContentLoaded", () => {
+    const bars = document.querySelectorAll(".progress-anim");
+    bars.forEach(bar => {
+      const value = bar.getAttribute("data-value");
+      setTimeout(() => {
+        bar.style.width = value;
+      }, 500);
+    });
+  });
+</script>
+
+</body>
+</html>
